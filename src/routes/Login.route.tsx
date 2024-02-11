@@ -1,5 +1,5 @@
 import { Paper, Typography, styled } from "@mui/material";
-import { LoginForm, LoginFormValues } from "../components/login/Login";
+import { LoginForm, LoginFormValues } from "../components/login/LoginForm";
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   maxWidth: 500,
@@ -21,8 +21,8 @@ const LoginRoute = () => {
   };
 
   return (
-    <StyledPaper>
-      <Typography variant="h1">Login</Typography>
+    <StyledPaper variant="outlined">
+      <Typography variant="h2">Login</Typography>
 
       <LoginForm onSubmit={handleLogin} />
     </StyledPaper>
