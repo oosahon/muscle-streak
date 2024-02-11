@@ -1,5 +1,7 @@
 import { Paper, Typography, styled } from "@mui/material";
-import { LoginForm, LoginFormValues } from "../components/login/LoginForm";
+import { LoginForm, LoginFormValues } from "../../components/login/LoginForm";
+import { useNavigate } from "react-router-dom";
+import { routeList } from "../route-lits";
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   maxWidth: 500,
@@ -16,8 +18,13 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 }));
 
 const LoginRoute = () => {
+  const navigate = useNavigate();
+
   const handleLogin = (formValues: LoginFormValues) => {
-    console.log("Form values: ", formValues);
+    // TODO osahon: handle authentication
+    if (formValues.email && formValues.password) {
+      navigate(routeList.workouts);
+    }
   };
 
   return (
